@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@600&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2E2E2E;
+        }
+        .calci{
+            display: flex;
+            flex-direction: column;
+            width: 35vw;
+            height: 90vh;
+            border: 2px solid grey;
+            border-radius: 30px;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .display{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 70%;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: black;
+            color: whitesmoke;
+            font-size: 50px;
+            overflow:hidden;
+            font-family: Pathway Extreme;
+        }
+        #spa{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 100%;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: black;
+            color: whitesmoke;
+            font-size: 50px;
+            overflow:hidden;
+            overflow-wrap: anywhere;
+            font-family: Pathway Extreme;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: #E2DFD2;
+        }
+        .numpad{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .nums{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 100%;
+            width: 100%;
+        }
+        .other{
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            height: 100%;
+            width: 33%;
+        }
+        .operators{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: 50%;
+            width: 100%;
+            color: black;
+        }
+        .one{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .one:hover{
+            color: black;
+            background-position: left;
+        }
+        .two{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .two:hover{
+            color: black;
+            background-position: left;
+        }
+        .three{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .three:hover{
+            color: black;
+            background-position: left;
+        }
+        .four{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .four:hover{
+            color: black;
+            background-position: left;
+        }
+        .five{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .five:hover{
+            color: black;
+            background-position: left;
+        }
+        .six{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .six:hover{
+            color: black;
+            background-position: left;
+        }
+        .seven{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .seven:hover{
+            color: black;
+            background-position: left;
+        }
+        .eight{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .eight:hover{
+            color: black;
+            background-position: left;
+        }
+        .nine{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .nine:hover{
+            color: black;
+            background-position: left;
+        }
+        .zero{
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .zero:hover{
+            color: black;
+            background-position: left;
+        }
+        #ob{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        #ob:hover{
+            color: black;
+            background-position: left;
+        }
+        #cb{
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, white 50%, black 50%);
+            color: white;
+            background-position: right;
+            background-size: 200% 100%;
+            overflow: hidden;
+            transition: all 1s;
+        }
+        #cb:hover{
+            color: black;
+            background-position: left;
+        }
+        span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            align-self: center;
+            border: none;
+            border-radius: 50%;
+            background: url(ripple.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 0% 0%;
+        }
+        @keyframes waves{
+            0%, 100%{
+                background-size: 0% 0%;
+            }
+            80%{
+                background-size: 200% 200%;
+            }
+        }
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+        }
+        button:hover{
+            transform: scale(1.2);
+        }
+        img{
+            transform: scale(0.3);
+        }
+        @media screen and (max-width:700px){
+            .calci{
+                width: 90vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calci">
+        <div class="display"><h6 id="spa">0</h6></div>
+        <div class="buttons">
+            <div class="numpad">
+                <div class="nums">
+        <button class="one"><span>1</span></button>
+        <button class="two"><span>2</span></button>
+        <button class="three"><span>3</span></button>
+        <button class="four"><span>4</span></button>
+        <button class="five"><span>5</span></button>
+        <button class="six"><span>6</span></button>
+        <button class="seven"><span>7</span></button>
+        <button class="eight"><span>8</span></button>
+        <button class="nine"><span>9</span></button>
+        <button id="ob"><span>(</span></button>
+        <button class="zero"><span>0</span></button>
+        <button id="cb"><span>)</span></button>
+    </div>
+    <div class="other">
+        <button class="back">←</button>
+        <button class="clear">C</button>
+        <button class="dot"><img src="dot.svg" alt=""></button>
+        <button class="equal">=</button>
+        
+    </div>
+    </div>
+    <div class="operators">
+        
+        <button class="add">&#xFF0B</button>
+        <button class="sub">&#8722</button>
+        <button class="divide">/</button>
+        <button class="mult">*</button>
+        <button class="Sine">Sin</button>
+        <button class="Cos">Cos</button>
+        <button class="Tan">Tan</button>
+        <button class="Log">Log</button>
+    </div>
+    </div>
+    </div>
+    <script async src="calculator.js"></script>
+</body>
+</html>
